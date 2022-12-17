@@ -12,5 +12,6 @@ declare module '@vue/runtime-core' {
     Catalog: typeof import('./src/components/Catalog.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    VanButton: typeof import('vant/es')['Button']
   }
 }

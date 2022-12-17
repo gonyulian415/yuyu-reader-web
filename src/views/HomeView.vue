@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div>
-      <a-button type="primary" @click="showCatalog">show catalog</a-button>
+      <a-button type="primary" @click="showCatalog"><van-button type="primary" />show catalog</a-button>
       <a-modal v-model:visible="visible" width="100%" wrap-class-name="full-modal">
         <template #footer>
           <a-button key="submit" type="primary" @click="handleOk">返回</a-button>
@@ -19,7 +19,7 @@ import Catalog from '@/components/Catalog.vue'
 import { ref } from 'vue'
 import type Navigation from 'epubjs/types/navigation';
 
-const book = ePub("../src/assets/埃勒里·奎因 30本合集.epub");
+const book = ePub("/埃勒里·奎因 30本合集.epub");
 const visible = ref<boolean>(false);
 let catalogData = ref<NavItem[]>([])
 
@@ -50,7 +50,6 @@ function showCatalog() {
 
 }
 const handleCatalogClick = (href: string) => {
-  showCatalogFlag.value = false;
 
   const reg = /^(([a-z]+\/)+)?(.+\.x?html)$/ig
   let prevHref = rUrl.replace(reg, '$1')
